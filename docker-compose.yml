@@ -7,18 +7,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    environment:
-      - RAILS_ENV=development
     volumes:
       - /Users/dev/realTimeNotification:/rails
-    command: /rails/bin/docker-entrypoint
-    stdin_open: true
-    tty: true
-    user: "rails"
-    entrypoint: ["/bin/bash", "-c"]
-    networks:
-      - app_net
-
-networks:
-  app_net:
-    driver: bridge
