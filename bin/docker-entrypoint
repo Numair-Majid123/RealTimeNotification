@@ -1,0 +1,20 @@
+#!/bin/bash -e
+
+# If running the rails server then create or migrate the existing database
+if [ "$1" == "./bin/rails" ] && [ "$2" == "server" ]; then
+  ./bin/rails db:prepare
+fi
+
+# If running credentials:edit for development or production, generate credentials first
+if [ "$1" == "rails" ] && [ "$2" == "credentials:edit" ] && ( [ "$3" == "--environment=development" ] || [ "$3" == "--environment=production" ] ); then
+  cd /app   # Change to the app directory
+  exec bundle exec rails credentials:edit --environment="${3##*=}"
+  exit 0    # Exit after generating credentials
+fi
+
+# Start the server with the specified environment, this can be overwritten at runtime
+if [ "$1" == "./bin/rails" ] && [ "$2" == "server" ]; then
+  exec bundle exec puma -C config/puma.rb
+fi
+
+exec "$@"

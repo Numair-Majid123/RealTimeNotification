@@ -1,0 +1,23 @@
+# .rubocop.yml
+
+# Enable/disable some cops
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'spec/**/*'
+
+# Customize rules
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+Style/Documentation:
+  Exclude:
+    - 'app/**/*.rb'
+    - 'test/*.rb'
+Metrics/AbcSize:
+  Max: 25
+  
