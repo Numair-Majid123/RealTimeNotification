@@ -7,5 +7,4 @@ COPY . .
 
 RUN bundle config --local set path 'vendor/bundle' && bundle install
 
-
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
