@@ -7,6 +7,15 @@ This Ruby on Rails application demonstrates a Real-Time SMS Notification System 
 - **Ruby version:** 3.3.0
 - **Rails version:** 7.1.2
 
+## Twilio Signup
+
+Visit the Twilio website and sign up for a new account.
+- Get Your Twilio API Credentials:
+After signing up, navigate to the Twilio Console and obtain your Account SID and Auth Token from the dashboard.
+
+- Get a Twilio Phone Number:
+In the Twilio Console, go to the Phone Numbers section. Purchase a new phone number that will be used as the sender for your SMS notifications.
+
 ## Environment Variables
 
 Before running the application, make sure to set the following environment variables in your `.env` file:
