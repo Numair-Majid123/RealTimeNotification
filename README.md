@@ -71,7 +71,7 @@ docker build -t realtime-sms-notifications .
 
 - Run the Docker container:
 ```
-docker run -p 3000:3000 -e RAILS_ENV=development -v /Users/dev/realTimeNotification:/rails realtimenotification
+ docker-compose up -d
 ```
 
 ## Trigger-Based Notifications
